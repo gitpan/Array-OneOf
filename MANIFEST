@@ -1,0 +1,10 @@
+MANIFEST
+Changes
+LICENSE
+Makefile.PL
+Build.PL
+META.yml
+README
+lib/Array/OneOf.pm
+lib/Array/OneOf.pod
+t/test.t
