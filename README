@@ -19,8 +19,21 @@ SYNOPSIS
 DESCRIPTION
 
     Array::OneOf provides one simple utility, the oneof function. Its use
-    is simple: if the first param is equal to any of the remaining params,
-    it returns true. Otherwise it returns false.
+    is simple: if the first param is equal to any of the remaining params
+    (in a string comparison), it returns true. Otherwise it returns false.
+
+    In this module, undef is considered the same as undef, and not the same
+    as any defined value. This is different than how most Perl programmers
+    usually expect comparisons to work, so caveat programmer.
+
+ALTERNATIVES
+
+    Array::OneOf is not a particularly efficient way to test if a value is
+    in an array. If efficiency is an important goal you may want to look at
+    List::MoreUtils or Syntax::Keyword::Junction. You may also want to
+    investigate using grep and/or the smart match operator (~~). I use
+    Array::OneOf because it compares values the way my projects need them
+    compared, its simple syntax, and small footprint.
 
 INSTALLATION
 
@@ -42,9 +55,15 @@ AUTHORS
 
     Miko O'Sullivan miko@idocs.com
 
-VERSION
+HISTORY
 
     Version 1.00 November 22, 2012
 
-      Initial release
+      Initial release.
+
+    Version 1.01 November 25, 2012
+
+      Removed dependency on String::Util. Clarified in documentation the
+      advantages and disadvantages of Array::OneOf, and suggested some
+      alternative modules.
 

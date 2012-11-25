@@ -1,9 +1,8 @@
 package Array::OneOf;
 use strict;
-use String::Util ':all';
 
 # version
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 # export
 use vars qw[ @ISA @EXPORT_OK %EXPORT_TAGS ];
@@ -32,9 +31,22 @@ Array::OneOf -- checks if an element is in an array
 
 =head1 DESCRIPTION
 
-Array::OneOf provides one simple utility, the oneof function.  Its
-use is simple: if the first param is equal to any of the remaining
-params, it returns true.  Otherwise it returns false.
+Array::OneOf provides one simple utility, the oneof function.  Its use is
+simple: if the first param is equal to any of the remaining params (in a
+string comparison), it returns true.  Otherwise it returns false.
+
+In this module, undef is considered the same as undef, and not the same as any
+defined value.  This is different than how most Perl programmers usually expect
+comparisons to work, so caveat programmer.
+
+=head1 ALTERNATIVES
+
+Array::OneOf is not a particularly efficient way to test if a value is in an
+array.  If efficiency is an important goal you may want to look at
+List::MoreUtils or Syntax::Keyword::Junction.  You may also want to
+investigate using grep and/or the smart match operator (~~).  I use
+Array::OneOf because it compares values the way my projects need them compared,
+its simple syntax, and small footprint.
 
 =head1 INSTALLATION
 
@@ -53,11 +65,22 @@ Array::OneOf can be installed with the usual routine:
 sub oneof {
 	my ($base, @remaining) = @_;
 	
+	COMPARE_LOOP:
 	foreach my $rem (@remaining) {
-		if (equndef $base, $rem)
+		# if both are undef, return true
+		if ( (! defined $base) && (! defined $rem) )
+			{ return 1 }
+		
+		# if just one is undef, go to next loop
+		if ( (! defined $base) || (! defined $rem) )
+			{ next COMPARE_LOOP }
+		
+		# if they're the same, return true
+		if ($base eq $rem)
 			{ return 1 }
 	}
 	
+	# not found, return false
 	return 0;
 }
 #
@@ -81,13 +104,18 @@ as Perl itself. This software comes with B<NO WARRANTY> of any kind.
 Miko O'Sullivan
 F<miko@idocs.com>
 
-=head1 VERSION
+=head1 HISTORY
 
 =over
 
 =item Version 1.00    November 22, 2012
 
-Initial release
+Initial release.
+
+=item Version 1.01    November 25, 2012
+
+Removed dependency on String::Util.  Clarified in documentation the advantages
+and disadvantages of Array::OneOf, and suggested some alternative modules.
 
 =back
 
