@@ -2,7 +2,7 @@ package Array::OneOf;
 use strict;
 
 # version
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 # export
 use vars qw[ @ISA @EXPORT_OK %EXPORT_TAGS ];
@@ -116,6 +116,10 @@ Initial release.
 
 Removed dependency on String::Util.  Clarified in documentation the advantages
 and disadvantages of Array::OneOf, and suggested some alternative modules.
+
+=item Version 1.02    November 28, 2012
+
+Cleaned up test.pl so that it compiles on many of the testers' machines.
 
 =back
 
