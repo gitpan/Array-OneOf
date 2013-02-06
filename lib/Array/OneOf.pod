@@ -46,11 +46,11 @@ Array::OneOf can be installed with the usual routine:
 
 =head1 TERMS AND CONDITIONS
 
-Copyright (c) 2012 by Miko O'Sullivan.  All rights reserved.  This program is 
-free software; you can redistribute it and/or modify it under the same terms 
+Copyright (c) 2012-2013 by Miko O'Sullivan.  All rights reserved.  This program
+is free software; you can redistribute it and/or modify it under the same terms
 as Perl itself. This software comes with B<NO WARRANTY> of any kind.
 
-=head1 AUTHORS
+=head1 AUTHOR
 
 Miko O'Sullivan
 F<miko@idocs.com>
@@ -71,6 +71,10 @@ and disadvantages of Array::OneOf, and suggested some alternative modules.
 =item Version 1.02    November 28, 2012
 
 Cleaned up test.pl so that it compiles on many of the testers' machines.
+
+=item Version 1.03    February 5, 2013
+
+Fixed problem with mismatched newlines.
 
 =back
 

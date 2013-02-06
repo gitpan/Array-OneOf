@@ -46,12 +46,12 @@ INSTALLATION
 
 TERMS AND CONDITIONS
 
-    Copyright (c) 2012 by Miko O'Sullivan. All rights reserved. This
+    Copyright (c) 2012-2013 by Miko O'Sullivan. All rights reserved. This
     program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself. This software comes with NO
     WARRANTY of any kind.
 
-AUTHORS
+AUTHOR
 
     Miko O'Sullivan miko@idocs.com
 
@@ -71,4 +71,8 @@ HISTORY
 
       Cleaned up test.pl so that it compiles on many of the testers'
       machines.
+
+    Version 1.03 February 5, 2013
+
+      Fixed problem with mismatched newlines.
 

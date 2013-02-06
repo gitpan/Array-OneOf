@@ -2,13 +2,13 @@ package Array::OneOf;
 use strict;
 
 # version
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 # export
-use vars qw[ @ISA @EXPORT_OK %EXPORT_TAGS ];
-push @ISA, 'Exporter';
+use base 'Exporter';
+use vars qw[@EXPORT_OK %EXPORT_TAGS];
 @EXPORT_OK = qw[ oneof ];
-%EXPORT_TAGS = (all =>[@EXPORT_OK]);
+%EXPORT_TAGS = ('all' =>[@EXPORT_OK]);
 
 
 =head1 NAME
@@ -95,11 +95,11 @@ __END__
 
 =head1 TERMS AND CONDITIONS
 
-Copyright (c) 2012 by Miko O'Sullivan.  All rights reserved.  This program is 
-free software; you can redistribute it and/or modify it under the same terms 
+Copyright (c) 2012-2013 by Miko O'Sullivan.  All rights reserved.  This program
+is free software; you can redistribute it and/or modify it under the same terms
 as Perl itself. This software comes with B<NO WARRANTY> of any kind.
 
-=head1 AUTHORS
+=head1 AUTHOR
 
 Miko O'Sullivan
 F<miko@idocs.com>
@@ -121,7 +121,10 @@ and disadvantages of Array::OneOf, and suggested some alternative modules.
 
 Cleaned up test.pl so that it compiles on many of the testers' machines.
 
-=back
+=item Version 1.03    February 5, 2013
 
+Fixed problem with mismatched newlines.
+
+=back
 
 =cut
