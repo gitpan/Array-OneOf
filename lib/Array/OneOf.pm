@@ -2,7 +2,7 @@ package Array::OneOf;
 use strict;
 
 # version
-our $VERSION = '1.03';
+our $VERSION = '1.04';
 
 # export
 use base 'Exporter';
@@ -124,6 +124,10 @@ Cleaned up test.pl so that it compiles on many of the testers' machines.
 =item Version 1.03    February 5, 2013
 
 Fixed problem with mismatched newlines.
+
+=item Version 1.04    April 25, 2014
+
+Fixed problem in CPAN package.
 
 =back
 
